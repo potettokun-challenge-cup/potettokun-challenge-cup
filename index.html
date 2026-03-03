@@ -1216,6 +1216,23 @@
         font-size: 0.78rem;
         max-width: 80px;
       }
+
+      .sponsor-title-mascot {
+        height: 120px;
+      }
+
+      .sponsor-title-mascot.mirror {
+        display: none;
+      }
+
+      .sponsor-title-logo {
+        max-height: 80px;
+        padding: 10px 16px;
+      }
+
+      .sponsor-title-info {
+        padding: 16px 8px !important;
+      }
     }
   </style>
 </head>
@@ -1248,9 +1265,9 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <img src="background.png" alt="" aria-hidden="true"
-      style="position:absolute;bottom:0;left:0;width:45%;max-width:420px;opacity:0.07;transform:rotate(-15deg) translate(-10%, 20%);pointer-events:none;filter:blur(2px);z-index:0;" />
+      style="position:absolute;bottom:0;left:0;width:40%;max-width:380px;opacity:0.1;transform:rotate(-20deg);transform-origin:bottom left;pointer-events:none;filter:blur(3px);z-index:0;" />
     <img src="background.png" alt="" aria-hidden="true"
-      style="position:absolute;top:0;right:0;width:38%;max-width:360px;opacity:0.05;transform:rotate(20deg) scaleX(-1) translate(-10%, -10%);pointer-events:none;filter:blur(3px);z-index:0;" />
+      style="position:absolute;top:0;right:0;width:35%;max-width:340px;opacity:0.07;transform:rotate(15deg) scaleX(-1);transform-origin:top right;pointer-events:none;filter:blur(3px);z-index:0;" />
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
@@ -1359,15 +1376,24 @@
           <div class="info-value">6チーム／約72選手</div>
           <div class="info-meta">保護者・スタッフ含め150〜200名規模</div>
         </div>
-        <div class="info-card">
-          <div class="info-label">主催</div>
-          <div class="info-value">株式会社アンバーライト</div>
-          <div class="info-meta">代表：和田 聡平</div>
-        </div>
+
         <div class="info-card">
           <div class="info-label">特別ルール</div>
           <div class="info-value">1チーム経験者 最大1名制限</div>
           <div class="info-meta">公平な競技環境を実現</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">主催</div>
+          <div class="info-value">アンバーライト合同会社</div>
+          <div class="info-meta">代表：和田 聡平</div>
+          <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="https://www.amberlight.co.jp" target="_blank" rel="noopener"
+              style="font-size:0.78rem;color:var(--orange);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">🌐
+              HP ↗</a>
+            <a href="https://www.instagram.com/amberlight_japan/" target="_blank" rel="noopener"
+              style="font-size:0.78rem;color:#BF8FFF;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">📷
+              Instagram ↗</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1723,7 +1749,7 @@
   <footer>
     <div class="container">
       <div class="footer-logo">🏀 ぽてっと君チャレンジカップ</div>
-      <div class="footer-org">主催：株式会社アンバーライト（代表：和田 聡平）</div>
+      <div class="footer-org">主催：アンバーライト合同会社（代表：和田 聡平）</div>
       <div class="footer-org">会場：福岡市立 福岡中学校 体育館</div>
       <div class="footer-org" style="margin-top:8px;">タイトルスポンサー：<a href="https://www.nikakudou.co.jp" target="_blank"
           style="color:var(--orange);">二鶴堂</a></div>
