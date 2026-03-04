@@ -927,12 +927,13 @@
       background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(248, 208, 0, 0.1));
       border: 2px solid rgba(212, 175, 55, 0.35);
       border-radius: 24px;
-      padding: 48px;
+      padding: 48px 32px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      gap: 0;
       transition: all 0.3s;
     }
 
@@ -1077,13 +1078,15 @@
 
     .sponsor-title-logo {
       max-height: 120px;
-      max-width: 480px;
-      width: 100%;
+      width: auto;
+      max-width: 60%;
       object-fit: contain;
       background: rgba(255, 255, 255, 0.95);
       border-radius: 14px;
       padding: 16px 32px;
       box-shadow: 0 4px 24px rgba(212, 175, 55, 0.15);
+      margin: 12px auto 20px;
+      display: block;
     }
 
     .sponsor-title-card-inner {
@@ -1391,7 +1394,11 @@
               style="font-size:0.78rem;color:var(--orange);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">🌐
               HP ↗</a>
             <a href="https://www.instagram.com/amberlight_japan/" target="_blank" rel="noopener"
-              style="font-size:0.78rem;color:#BF8FFF;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">📷
+              style="font-size:0.78rem;color:#BF8FFF;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
               Instagram ↗</a>
           </div>
         </div>
@@ -1643,24 +1650,22 @@
           <span class="tier-title">タイトルスポンサー</span>
           <span class="tier-line"></span>
         </div>
-        <a href="https://www.nikakudou.co.jp" target="_blank" rel="noopener" class="sponsor-title-card fade-in"
-          style="display:block; text-align:center; padding: 48px 32px;">
-          <div style="font-size:1.4rem; margin-bottom:12px;">👑</div>
-          <img src="logo_nikakudo.png" alt="二鶴堂" class="sponsor-title-logo"
-            style="max-height:120px; max-width:80%; object-fit:contain; margin: 0 auto 20px; display:block;" />
-          <div class="sponsor-title-type" style="margin-bottom:16px;">NIKAKUDO Co., Ltd. — オフィシャルタイトルスポンサー</div>
-          <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
-            <div class="sponsor-title-link">公式サイトへ →</div>
+        <div class="sponsor-title-card fade-in">
+          <div style="font-size:1.4rem; margin-bottom:8px;">👑</div>
+          <img src="logo_nikakudo.png" alt="二鶴堂" class="sponsor-title-logo" />
+          <div class="sponsor-title-type" style="margin-bottom:20px;">NIKAKUDO Co., Ltd. — オフィシャルタイトルスポンサー</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+            <a href="https://www.nikakudou.co.jp" target="_blank" rel="noopener" class="sponsor-link-btn">公式サイト ↗</a>
             <a href="https://x.com/nikakudou?s=11&t=aKpCpb7eHLlvAIsp9Wfm7A" target="_blank" rel="noopener"
-              style="font-size:0.85rem;color:rgba(255,255,255,0.7);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              class="sponsor-link-btn" style="display:inline-flex;align-items:center;gap:6px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                 <path
-                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63z" />
               </svg>
-              X（Twitter）
+              X（Twitter）↗
             </a>
           </div>
-        </a>
+        </div>
       </div>
 
       <!-- SILVER SPONSOR -->
