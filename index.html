@@ -367,6 +367,77 @@
       font-size: 1.4rem;
     }
 
+    /* ===== HERO PHOTO ===== */
+    .hero-photo-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 42vh;
+      min-height: 220px;
+      max-height: 400px;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      filter: brightness(0.72) saturate(0.9);
+    }
+
+    .hero-photo-fade-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(180deg, var(--dark) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-photo-caption {
+      position: absolute;
+      bottom: 12px;
+      right: 16px;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.08em;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    /* hero content を写真の上に出す */
+    .hero-content {
+      padding-bottom: 44vh;
+    }
+
+    @media (max-width: 768px) {
+      .hero-photo-wrap {
+        height: 32vh;
+        max-height: 260px;
+      }
+      .hero-content {
+        padding-bottom: 34vh;
+      }
+    }
+
+    /* ===== FULL PHOTO SECTION ===== */
+    .full-photo-section {
+      width: 100%;
+      background: var(--dark);
+      padding: 0;
+      margin: 0;
+    }
+
+    .full-photo {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* ===== CONCEPT ===== */
     .concept {
       padding: 100px 0;
@@ -1816,6 +1887,7 @@
       <li><a href="#results">結果</a></li>
       <li><a href="#instructors">講師</a></li>
       <li><a href="#sponsors">スポンサー</a></li>
+      <li><a href="#photos" style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,var(--orange),var(--yellow));color:var(--dark)!important;padding:5px 13px;border-radius:20px;font-size:0.82rem;font-weight:700;">📷 写真DL</a></li>
       <li><a href="https://www.instagram.com/potettokun_challenge_cup" target="_blank" rel="noopener"
           style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff!important;padding:5px 13px;border-radius:20px;font-size:0.82rem;font-weight:700;">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
@@ -1860,10 +1932,32 @@
         全選手に活躍の舞台を。成長と挑戦を讃え合う<br>
         中学生バスケットボール大会
       </p>
+      
+      <!-- 写真配布アテンション -->
+      <style>
+        @keyframes bounce-y {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+      </style>
+      <div style="margin-top: 32px; display: flex; justify-content: center; width: 100%; animation: bounce-y 2s infinite ease-in-out;">
+        <a href="#photos" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, var(--yellow), var(--orange)); color: var(--dark); padding: 14px 28px; border-radius: 99px; text-decoration: none; font-weight: 800; font-size: 1.1rem; box-shadow: 0 8px 24px rgba(245, 146, 46, 0.4); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 32px rgba(245, 146, 46, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 24px rgba(245, 146, 46, 0.4)';">
+          <span style="font-size: 1.3rem;">📷</span> 大会写真の配布を開始しました！
+        </a>
+      </div>
     </div>
+    <!-- 写真は直下のセクションで全面表示します -->
     <div class="scroll-hint">
       <span class="arrow">↓</span>
       <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- 全面表示する写真セクションを追加 -->
+  <section class="full-photo-section">
+    <div style="position: relative;">
+      <img src="hero-01.jpg" alt="第1回ぽてっと君チャレンジカップ 参加者全員集合写真" class="full-photo" />
+      <div class="hero-photo-caption" style="bottom: 16px; right: 24px; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">📷 3.15 (Sun) — 参加者全員集合</div>
     </div>
   </section>
 
@@ -3064,6 +3158,81 @@
     </div>
   </section>
 
+  <!-- PHOTO DOWNLOAD -->
+  <section class="photo-dl" id="photos">
+    <div class="container">
+      <span class="badge" style="background:rgba(245,146,46,0.15);color:var(--orange);border:1px solid rgba(245,146,46,0.3);">📷 PHOTOS</span>
+      <h2 class="section-title" style="margin-top:12px;">大会<span>写真</span>配布</h2>
+      <p class="section-sub">公式インスタグラムで公開中の合言葉を入力して写真をダウンロード</p>
+
+      <div class="photo-dl-card fade-in">
+        <!-- Instagram誘導 -->
+        <div class="photo-dl-insta">
+          <div class="photo-dl-insta-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="photo-dl-insta-text">
+            <div class="photo-dl-step">STEP 1</div>
+            <div class="photo-dl-insta-label">公式インスタグラムをチェック</div>
+            <div class="photo-dl-insta-sub">合言葉を投稿中！フォローして最新情報をキャッチしよう。</div>
+          </div>
+          <a href="https://www.instagram.com/potettokun_challenge_cup" target="_blank" rel="noopener" class="photo-dl-insta-btn">
+            @potettokun_challenge_cup ↗
+          </a>
+        </div>
+
+        <div class="photo-dl-divider"><span>▼</span></div>
+
+        <!-- 合言葉入力 -->
+        <div class="photo-dl-form-wrap">
+          <div class="photo-dl-step">STEP 2</div>
+          <div class="photo-dl-form-label">合言葉を入力してDLリンクを解放</div>
+          <div class="photo-dl-form">
+            <input
+              type="text"
+              id="photo-password"
+              class="photo-dl-input"
+              placeholder="合言葉をここに入力..."
+              autocomplete="off"
+            />
+            <button class="photo-dl-btn" onclick="checkPhotoPassword()" id="photo-dl-btn">🔓 解放する</button>
+          </div>
+          <div id="photo-error" class="photo-dl-error" style="display:none;">❌ 合言葉が違います。インスタで確認してみてください。</div>
+        </div>
+
+        <!-- ダウンロードリンク（初期非表示） -->
+        <div id="photo-result" class="photo-dl-result" style="display:none;">
+          <div class="photo-dl-success-icon">🎉</div>
+          <div class="photo-dl-success-title">合言葉正解！写真をダウンロードできます</div>
+          <div class="photo-dl-success-sub">500枚の大会写真をまとめてGoogleドライブからDLできます。</div>
+          <a
+            id="photo-dl-link"
+            href="https://drive.google.com/drive/folders/XXXXXXXXXXXXXXXXXXXXXXXXXX"
+            target="_blank"
+            rel="noopener"
+            class="photo-dl-drive-btn"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 87.3 78" fill="currentColor"><path d="M6.6 66.85l3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8H0c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/><path d="M43.65 25L29.9 1.2C28.55 2 27.4 3.1 26.6 4.5L1.2 48.5C.4 49.9 0 51.45 0 53h27.5z" fill="#00ac47"/><path d="M73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5H59.8l5.85 8.95z" fill="#ea4335"/><path d="M43.65 25L57.4 1.2C56.05.4 54.5 0 52.9 0H34.4C32.8 0 31.25.4 29.9 1.2z" fill="#00832d"/><path d="M59.8 53h27.5c0-1.55-.4-3.1-1.2-4.5L60.7 4.5c-.8-1.4-1.95-2.5-3.3-3.3L43.65 25z" fill="#2684fc"/><path d="M43.65 50.5L29.9 74.3c1.35.8 2.9 1.2 4.5 1.2h18.5c1.6 0 3.15-.4 4.5-1.2z" fill="#ffba00"/></svg>
+            Googleドライブで写真を見る・ダウンロード
+          </a>
+          <div class="photo-dl-note">※ Googleアカウントは不要です。リンクを開いてそのままダウンロードできます。</div>
+        </div>
+      </div>
+
+      <!-- 枚数バッジ -->
+      <div class="photo-dl-stats fade-in">
+        <div class="photo-stat-item">
+          <div class="photo-stat-num" style="font-size:2rem;">約<span style="font-family:'Anton',sans-serif;font-size:2.8rem;color:var(--orange);margin-left:2px;">500</span><span>枚</span></div>
+          <div class="photo-stat-label">大会写真</div>
+        </div>
+        <div class="photo-stat-item">
+          <div class="photo-stat-num">3/15<span>の模様</span></div>
+          <div class="photo-stat-label">撮影日</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -3090,6 +3259,249 @@
       <div class="footer-copy">© 2026 Amber Light Inc. All rights reserved.</div>
     </div>
   </footer>
+
+  <style>
+    /* ===== PHOTO DOWNLOAD ===== */
+    .photo-dl {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--dark) 0%, #0a0a18 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .photo-dl::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(245,146,46,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .photo-dl-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 40px;
+      margin-top: 48px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+    /* Insta誘導エリア */
+    .photo-dl-insta {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: linear-gradient(135deg, rgba(131,58,180,0.15), rgba(253,29,29,0.08), rgba(252,176,69,0.1));
+      border: 1px solid rgba(252,176,69,0.2);
+      border-radius: 16px;
+      padding: 20px 24px;
+      flex-wrap: wrap;
+    }
+    .photo-dl-insta-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .photo-dl-insta-text {
+      flex: 1;
+      min-width: 160px;
+    }
+    .photo-dl-step {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      color: var(--orange);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .photo-dl-insta-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+    .photo-dl-insta-sub {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+    .photo-dl-insta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .photo-dl-insta-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
+    /* 区切り */
+    .photo-dl-divider {
+      text-align: center;
+      color: var(--gray);
+      font-size: 1.3rem;
+      margin: 20px 0;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    /* 入力フォーム */
+    .photo-dl-form-wrap {
+      margin-bottom: 24px;
+    }
+    .photo-dl-form-label {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+    .photo-dl-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .photo-dl-input {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(255,255,255,0.06);
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: var(--white);
+      font-size: 1rem;
+      font-family: 'Noto Sans JP', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .photo-dl-input:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(245,146,46,0.15);
+    }
+    .photo-dl-input.correct {
+      border-color: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.15);
+    }
+    .photo-dl-input.wrong {
+      border-color: #ef4444;
+      animation: shake 0.4s ease;
+    }
+    @keyframes shake {
+      0%,100%{transform:translateX(0)}
+      25%{transform:translateX(-6px)}
+      75%{transform:translateX(6px)}
+    }
+    .photo-dl-btn {
+      background: linear-gradient(135deg, var(--orange), var(--yellow));
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .photo-dl-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+    .photo-dl-error {
+      color: #f87171;
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+    /* 正解・DLエリア */
+    .photo-dl-result {
+      text-align: center;
+      padding: 28px 20px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.03));
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: 16px;
+      animation: resultIn 0.5s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    @keyframes resultIn {
+      from { opacity:0; transform:translateY(16px) scale(0.96); }
+      to   { opacity:1; transform:translateY(0) scale(1); }
+    }
+    .photo-dl-success-icon { font-size: 3rem; margin-bottom: 10px; }
+    .photo-dl-success-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #4ade80;
+      margin-bottom: 6px;
+    }
+    .photo-dl-success-sub {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    .photo-dl-drive-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--orange), #ff6b35);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 30px;
+      border-radius: 16px;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 8px 32px rgba(245,146,46,0.35);
+      margin-bottom: 14px;
+    }
+    .photo-dl-drive-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-3px);
+    }
+    .photo-dl-note {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+    /* 統計バッジ */
+    .photo-dl-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .photo-stat-item { text-align: center; }
+    .photo-stat-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.8rem;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .photo-stat-num span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray);
+      margin-left: 2px;
+    }
+    .photo-stat-label {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+    @media (max-width: 600px) {
+      .photo-dl-card { padding: 24px 18px; }
+      .photo-dl-insta { flex-direction: column; text-align: center; }
+      .photo-dl-insta-btn { width: 100%; text-align: center; }
+    }
+  </style>
 
   <script>
     // Tab switching
@@ -3147,6 +3559,39 @@
       } else {
         nav.style.background = 'rgba(13,13,26,0.85)';
       }
+    });
+
+    // ===== PHOTO DOWNLOAD: 合言葉認証 =====
+    const _0x1a2b = 'JUUzJTgxJUJEJUUzJTgxJUE2JUUzJTgzJTgxJUUzJTgzJUEzJUUzJTgzJUFD';
+    const _0x3c4d = 'aHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL2RyaXZlL2ZvbGRlcnMvMVJBcXhBckFHd0dsNXVBanNIWlhfaWlycUc5Sm12MFE1P3VzcD1zaGFyZV9saW5r';
+
+    function checkPhotoPassword() {
+      const input = document.getElementById('photo-password');
+      const val = input.value.trim();
+      const error = document.getElementById('photo-error');
+      const result = document.getElementById('photo-result');
+      const driveLink = document.getElementById('photo-dl-link');
+
+      if (!val) return;
+
+      if (btoa(encodeURIComponent(val)) === _0x1a2b) {
+        input.classList.remove('wrong');
+        input.classList.add('correct');
+        error.style.display = 'none';
+        driveLink.href = atob(_0x3c4d);
+        result.style.display = 'block';
+        result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        input.classList.remove('correct');
+        input.classList.add('wrong');
+        setTimeout(() => input.classList.remove('wrong'), 500);
+        error.style.display = 'block';
+        result.style.display = 'none';
+      }
+    }
+    // Enterキーでも送信
+    document.getElementById('photo-password').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPhotoPassword();
     });
   </script>
 
